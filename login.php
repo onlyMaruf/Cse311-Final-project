@@ -4,13 +4,13 @@ if(isset($save)){
 	if($e=="" || $p==""){
 		$err="<font color='red'>fill all the fields first</font>";	
 	}else{	
-		$sql=mysqli_query($conn,"select * from admin where email='$e' and password='$p'");
+		$sql=mysqli_query($conn,"select * from employee where email='$e' and password='$p'");
 
 		$r=mysqli_num_rows($sql);
 
-		if($r==true){
+		if($p==true){
 			$_SESSION['user']=$e;
-			header('location:admin');
+			header('location:employee');
 		}else{
 			$err="<font color='red'>Invalid login details</font>";
 		}
@@ -22,7 +22,7 @@ if(isset($save)){
 	<div class="col-sm-8">
 		<form method="post">
 			<div class="row">
-				<div class="col-sm-4"><h3 style="color:darkslategray">Admin</h3></div>
+				<div class="col-sm-4"><h3 style="color:darkslategray">Employee</h3></div>
 			</div>
 	
 			<div class="row">
